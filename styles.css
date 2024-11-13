@@ -52,6 +52,22 @@ body {
     overflow-y: auto;
 }
 
+
+#chat-content::-webkit-scrollbar {
+    width: 10px; /* Ancho del scroll */
+}
+
+#chat-content::-webkit-scrollbar-track {
+    background: #f0f8ff;
+    border-radius: 10px; 
+}
+
+#chat-content::-webkit-scrollbar-thumb {
+    background-color: #6A5ACD; 
+    border-radius: 10px; 
+    border: 2px solid #f0f8ff; 
+}
+
 .message {
     display: flex;
     align-items: center;
