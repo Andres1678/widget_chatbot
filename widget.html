@@ -1,27 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Chatbot</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <button id="open-chat">Abrir Chat</button>
-  <div id="chat-widget" style="display: none;">
-    <div id="chat-header">
-        <h2>Mi Chatbot</h2>
-        <span id="close-chat">✖</span> <!-- Botón de cierre -->
-      </div>
-    <div id="chatbox">
-      <div id="messages">
-        <p>¡Hola!  ¿En qué te puedo ayudar hoy?</p>
-      </div>
-      <input type="text" id="user-input" placeholder="Escribe un mensaje...">
-      <button onclick="sendMessage()">Enviar</button>
+    <div id="chatbot-container">
+        <div id="chat-header">
+            Chatbot
+            <button id="close-chat" onclick="closeChat()">✖️</button> <!-- Botón de cerrar -->
+        </div>
+        <div id="chat-content">
+            <div class="message bot">
+                <div class="icon">🤖</div>
+                <div class="text">Hola 👋 ¿Cómo puedo ayudarte hoy?</div>
+            </div>
+            <div id="options-menu">
+                <button onclick="handleOption('Autenticación ServiceManager')">Autenticación ServiceManager</button>
+                <button onclick="handleOption('Obtener Tickets')">Obtener Tickets</button>
+                <button onclick="handleOption('Consulta SD')">Consulta SD</button>
+                <button onclick="handleOption('Crear IM')">Crear IM</button>
+                <button onclick="handleOption('Menú Principal')">Menú Principal</button>
+                <button onclick="handleOption('Consulta Requerimientos')">Consulta Requerimientos</button>
+                <button onclick="handleOption('Crear Requerimiento')">Crear Requerimiento</button>
+                <button onclick="handleOption('Contáctenos')">Contáctenos</button>
+                <button onclick="handleOption('Ejecución de parámetros')">Ejecución de parámetros</button>
+            </div>
+        </div>
+        <div id="chat-input">
+            <input type="text" id="user-input" placeholder="Escribe un mensaje..." onkeypress="handleUserInput(event)">
+            <button id="send-button" onclick="sendMessage()">
+                📤 <!-- Puedes reemplazar este emoji con un icono de tu elección -->
+            </button>
+        </div>
+        
     </div>
-  </div>
 
-  <script src="script.js"></script>
+    <!-- Botón flotante para abrir el chatbot -->
+    <button id="chat-toggle" onclick="toggleChat()">💬</button>
+
+    <script src="script.js"></script>
 </body>
 </html>
