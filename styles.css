@@ -38,10 +38,10 @@ body {
 }
 
 #close-chat img{
-
     border: none;
     cursor: pointer;
-    width: 20px;
+    width: 22px;
+    vertical-align: middle
 }
 
 /* Contenido del chatbot */
